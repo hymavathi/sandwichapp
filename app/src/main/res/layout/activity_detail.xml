@@ -1,93 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context="com.udacity.sandwichclub.DetailActivity">
 
-   <!--<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">-->
+        android:layout_height="wrap_content"
+        >
 
-        <FrameLayout
+        <ImageView
+            android:id="@+id/image_iv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/image_iv"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/sandwich_picture_content_description"
-                android:scaleType="centerCrop" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="210dp"
-                android:text="@string/detail_place_of_origin_label"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/origin_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
-                android:layout_marginStart="150dp"
-                android:layout_marginTop="210dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="250dp"
-                android:text="@string/detail_ingredients_label"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/ingredients_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
-                android:layout_marginStart="150dp"
-                android:layout_marginTop="250dp"
-                android:textStyle="bold" />
+            android:layout_height="@dimen/activity_image_height"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/sandwich_picture_content_description"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+            <!--android:layout_marginLeft="@dimen/activity_left_from_edge_margin"
+            android:layout_marginRight="@dimen/activity_left_from_edge_margin"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/activity_top_margin"-->
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="330dp"
-                android:text="@string/detail_also_known_as_label"
-                android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/also_known_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
-                android:layout_marginStart="150dp"
-                android:layout_marginTop="330dp" />
+        <TextView
+            android:id="@+id/origin_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_left_from_edge_margin"
+            android:layout_marginStart="@dimen/activity_left_from_edge_margin"
+            android:layout_marginTop="@dimen/activity_top_margin"
+            android:text="@string/detail_place_of_origin_label"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_iv" />
+
+        <TextView
+            android:id="@+id/origin_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_left_from_view"
+            android:layout_marginStart="@dimen/activity_left_from_view"
+            android:layout_marginRight="@dimen/activity_right_from_edge_margin"
+            android:layout_marginTop="@dimen/activity_top_margin"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_iv"
+            android:textAlignment="gravity"
+            android:layout_marginEnd="@dimen/activity_right_from_edge_margin"/>
+
+        <TextView
+            android:id="@+id/ingredients_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_left_from_edge_margin"
+            android:layout_marginStart="@dimen/activity_left_from_edge_margin"
+            android:layout_marginTop="@dimen/activity_top_margin"
+            android:text="@string/detail_ingredients_label"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/origin_tv" />
+
+        <TextView
+            android:id="@+id/ingredients_tv"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/activity_left_from_view"
+            android:layout_marginStart="@dimen/activity_left_from_view"
+            android:layout_marginTop="@dimen/activity_top_margin"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/origin_tv"
+            android:layout_marginRight="@dimen/activity_right_from_edge_margin"
+            android:layout_marginEnd="@dimen/activity_right_from_edge_margin"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textAlignment="gravity"
+
+            />
+
+        <TextView
+            android:id="@+id/also_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_left_from_edge_margin"
+            android:layout_marginStart="@dimen/activity_left_from_edge_margin"
+            android:layout_marginTop="@dimen/activity_top_margin"
+            android:text="@string/detail_also_known_as_label"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ingredients_tv" />
+
+        <TextView
+            android:id="@+id/also_known_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_left_from_view"
+            android:layout_marginStart="@dimen/activity_left_from_view"
+            android:layout_marginTop="@dimen/activity_top_margin"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ingredients_tv"
+            android:layout_marginRight="@dimen/activity_right_from_edge_margin"
+            android:layout_marginEnd="@dimen/activity_right_from_edge_margin"
+            app:layout_constraintRight_toRightOf="parent"
+            />
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="370dp"
-                android:text="@string/detail_description_label"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/description_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_left_from_edge_margin"
+            android:layout_marginStart="@dimen/activity_left_from_edge_margin"
+            android:layout_marginTop="@dimen/activity_top_margin"
+            android:text="@string/detail_description_label"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/also_known_tv" />
 
-            <TextView
-                android:id="@+id/description_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
-                android:layout_marginStart="150dp"
-                android:layout_marginTop="370dp"
-                android:textAlignment="gravity" />
+        <TextView
+            android:id="@+id/description_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_left_from_view"
+            android:layout_marginStart="@dimen/activity_left_from_view"
+            android:layout_marginTop="@dimen/activity_top_margin"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/also_known_tv"
+            android:layout_marginRight="@dimen/activity_right_from_edge_margin"
+            android:layout_marginEnd="@dimen/activity_right_from_edge_margin"
+            app:layout_constraintRight_toRightOf="parent"
 
-        </FrameLayout>
- <!-- </HorizontalScrollView>-->
+            />
+
+    </android.support.constraint.ConstraintLayout>
 
 
 </ScrollView>

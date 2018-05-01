@@ -11,10 +11,13 @@ import com.squareup.picasso.Picasso;
 import com.udacity.sandwichclub.model.Sandwich;
 import com.udacity.sandwichclub.utils.JsonUtils;
 
+
+
 public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
+
     private TextView ingredientsTv;
     private TextView originTv;
     private TextView descriptionTv;
@@ -64,7 +67,7 @@ public class DetailActivity extends AppCompatActivity {
     private void populateUI(Sandwich sandwich) {
 
         ingredientsTv = (TextView) findViewById(R.id.ingredients_tv);
-        if (null != sandwich.getAlsoKnownAs().toString() && sandwich.getAlsoKnownAs().size() > 0) {
+        if (null != sandwich.getIngredients().toString() && sandwich.getIngredients().size() > 0) {
             ingredientsTv.setText(sandwich.getIngredients().toString());
         }
 
